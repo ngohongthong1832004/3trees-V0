@@ -1,0 +1,171 @@
+:root {
+  --white-color: #fff;
+  --black-color: rgb(0, 0, 0);
+  --text-color: #333;
+  --primary-color: #ff6051;
+  --border-color: #dbdbdb;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; /*bằng 10px*/
+  line-height: 1.6rem;
+  font-family: "Roboto", sans-serif; /*font chũ*/
+  box-sizing: border-box;
+}
+/*dùng để chỉnh cho phù hợp với kích thước của từng lại màn hình
+responsive*/
+.grid__row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+.grid__rowload {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+/*text*/
+.grid__column-2 {
+  padding-left: 12px;
+  padding-right: 12px;
+  width: 16.667%;
+  position: relative;
+}
+.grid__column-2-loi {
+  padding-left: 5px;
+  padding-right: 5px;
+  position: relative;
+}
+.grid__column-2-4 {
+  width: 20%;
+}
+
+.grid__column-10 {
+  padding-left: 12px;
+  padding-right: 12px;
+  width: 83.333%;
+}
+/*animation*/
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes growth {
+  from {
+    transform: scale(var(--growth-from));
+  }
+  to {
+    transform: scale(var(--growth-to));
+  }
+}
+/*modal*/
+
+/*btn style*/
+.btn {
+  min-width: 142px;
+  min-height: 36px;
+  text-decoration: none;
+  border-radius: 2px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.btn.btn--primary {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+.btn.btn--size-s {
+  height: 32px;
+  font-size: 15px;
+}
+/*selection*/
+.select-input {
+  position: relative;
+  min-width: 120px;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 2px;
+  background-color: var(--white-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid black;
+}
+.select-input:hover .select-input__list {
+  display: block;
+}
+.select-input__label {
+  font-size: 1.4rem;
+}
+.select-input__icon {
+  position: relative;
+  font-size: 1.4rem;
+  color: var(--black-color);
+  top: 1px;
+}
+.select-input__list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 25px;
+  border-radius: 2px;
+  background-color: var(--white-color);
+  padding-left: 8px 16px;
+  list-style: none;
+  padding: 7px;
+  margin-top: 3px;
+  display: none;
+  z-index: 1;
+}
+.select-input__link {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+}
+.select-input__link:hover {
+  color: var(--primary-color);
+}
+/*PAGINATION*/
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+.pagination-item {
+  margin: 0 20px;
+}
+.pagination-item__link {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--black-color);
+  min-width: 40px;
+  height: 30px;
+  line-height: 30px;
+  background-color: rgb(248, 179, 170);
+  border-radius: 2px solid var(--black-color);
+  border-radius: 50%;
+}
+.pagination-item__link:hover {
+  background-color: red;
+}

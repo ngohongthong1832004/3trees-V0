@@ -1,0 +1,290 @@
+.app {
+  overflow: hidden;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+/* ================================== Start header ================================== */
+.header {
+  background: rgb(146, 2, 244);
+  background: linear-gradient(
+    348deg,
+    rgba(146, 2, 244, 1) 21%,
+    rgba(5, 199, 250, 1) 55%,
+    rgba(254, 6, 6, 1) 88%
+  );
+  height: 45px;
+  width: 100%;
+  position: fixed;
+}
+
+.header__wrap {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header__bars {
+  line-height: 45px;
+  font-size: 30px;
+  padding: 0 90px 0 50px;
+}
+.header__bars:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.header__wrap__search {
+  flex: 1;
+  line-height: 45px;
+  display: flex;
+}
+
+.header__logo {
+  padding: 0 50px;
+  margin: auto;
+  position: absolute;
+}
+
+.logo {
+  position: relative;
+  width: 190px;
+  padding-top: 100%;
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: -65px;
+}
+.header__search {
+  align-content: center;
+  margin: auto;
+}
+
+.header__wrap__logoSearch {
+  display: flex;
+  align-content: center;
+  line-height: 45px;
+  background: rgb(146, 2, 244);
+  background: linear-gradient(
+    180deg,
+    rgba(146, 2, 244, 1) 21%,
+    rgba(5, 199, 250, 1) 55%,
+    rgba(254, 6, 6, 1) 88%
+  );
+  height: 28px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+@keyframes slide {
+  from {
+    width: 0;
+  }
+  to {
+    width: 500px;
+  }
+}
+.input__search {
+  height: 100%;
+  border: none;
+  outline: none;
+  width: 500px;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0 14px;
+  animation: slide linear 0.8s;
+  display: none;
+}
+.wrap__logo__search {
+  display: flex;
+  margin: auto;
+  padding: 0 18px;
+  cursor: pointer;
+}
+.search__logo {
+  display: flex;
+  margin: auto;
+  font-size: 18px;
+}
+
+.header__accout {
+  line-height: 45px;
+  display: flex;
+  padding: 0 20px;
+}
+
+.header__account__logIn {
+  font-size: 19px;
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+.header__account__register {
+  margin-left: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.header__account__logIn:hover,
+.header__account__register:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+/* ================================== End header ================================== */
+
+/* ================================== start notification ================================== */
+.intertainment {
+  display: flex;
+  position: fixed;
+  margin-top: 45px;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.calender {
+  margin-top: 8px;
+  padding: 0 50px;
+  align-items: center;
+}
+.times {
+  display: flex;
+  justify-content: space-evenly;
+}
+.hour {
+  font-size: 45px;
+}
+.colon {
+  font-size: 40px;
+}
+.minute {
+  font-size: 45px;
+}
+.days {
+  display: flex;
+}
+.month {
+  font-size: 23px;
+  padding: 0 5px;
+}
+.day {
+  font-size: 23px;
+  padding: 0 5px;
+}
+.year {
+  font-size: 23px;
+  padding: 0 5px;
+}
+
+.quote {
+  display: grid;
+  flex: 1;
+  margin: auto;
+  align-content: stretch;
+  justify-content: center;
+  justify-items: center;
+}
+.quote__line1 {
+  font-size: 19px;
+  font-weight: 500;
+  font-style: oblique;
+  font-family: fantasy;
+}
+.quote__line2 {
+  font-size: 19px;
+  font-weight: 500;
+  font-style: oblique;
+  font-family: fantasy;
+}
+
+.soundtrack {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 0 50px 0 90px;
+}
+.icon__music__note {
+  font-size: 70px;
+}
+.button__toggle__play {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: azure;
+  margin-left: 10px;
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.icon__music__pause {
+  font-size: 25px;
+  position: absolute;
+  opacity: 1;
+}
+.icon__music__play {
+  font-size: 25px;
+  position: absolute;
+  opacity: 0;
+}
+.toggle__music__pause {
+  opacity: 0;
+}
+.toggle__music__play {
+  opacity: 1;
+}
+
+.notification {
+  position: fixed;
+  margin-top: 145px;
+  width: 16.67%;
+  height: 80vmax;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* ================================== end notification  ================================== */
+
+/* ================================== start main  ================================== */
+.main__film {
+  margin-top: 200px;
+}
+.film__recommend {
+  background-color: aqua;
+  width: 100%;
+  height: 500px;
+}
+.film__list {
+  background-color: rgb(68, 146, 103);
+  width: 100%;
+  height: 500px;
+}
+.film__all {
+  background-color: rgb(128, 43, 131);
+  width: 100%;
+  height: 500px;
+}
+.test {
+  display: flex;
+  justify-content: space-evenly;
+}
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+
+/*======================*/
+.main__img {
+}
+
+/*======================*/
+.main__music {
+}
+
+/* ================================== End main ================================== */
+
+/*================================== Animation==================================*/
+.open {
+  display: flex;
+}
