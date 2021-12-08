@@ -1,12 +1,6 @@
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
-
-
-
-
-
-
 // animation search
 ;(function() {
     const searchEl = $('.header__wrap__logoSearch')
@@ -21,7 +15,6 @@ const $$ = document.querySelectorAll.bind(document)
 
     }
 })();
-
 
 //CLOCK
 function clockTime() {
@@ -86,33 +79,83 @@ function formatTime(time) {
 }
 clockTime();
 setInterval(clockTime,50000)
+// QUOTE
+
+
+
 
 
 // soundtrack
-;(function () {
-    const btn__relax = $('.button__toggle__play')
-    const pause__music = $('.icon__music__pause')
-    const play__music = $('.icon__music__play')
-    const audioSoundtrackEl = $('.audio__soundtrack')
+const relax = {
+    isPlaying : true,
+    playRelax : function () {
+        const btn__relax = $('.button__toggle__play');
+        const pause__music = $('.icon__music__pause');
+        const play__music = $('.icon__music__play');
+        const audioSoundtrackEl = $('.audio__soundtrack');
 
-    audioSoundtrackEl.onpause = function(){
-        btn__relax.onclick = function() {
-            console.log('ngohongthong');
+        btn__relax.onclick = function (){
+            if(relax.isPlaying) {
+                audioSoundtrackEl.play()
+             }
+            else {
+                audioSoundtrackEl.pause()
+            }
+        }
+        audioSoundtrackEl.onplay = function () {
             pause__music.classList.toggle('toggle__music__pause')
             play__music.classList.toggle('toggle__music__play')
-            audioSoundtrackEl.play()
-        }}
-    audioSoundtrackEl.onplay = function(){
-        btn__relax.onclick = function() {
-            console.log('pine');
+            relax.isPlaying = false
+        }
+        audioSoundtrackEl.onpause = function () {
             pause__music.classList.toggle('toggle__music__pause')
             play__music.classList.toggle('toggle__music__play')
-            audioSoundtrackEl.pause()
-        }}
-    
-    
-    
+            relax.isPlaying = true
+        }
+    }
+};
+relax.playRelax()
+
+//animation action click 
+;(function () {
+    const btn__bar = $('.icon__bar')
+    const footerEl = $('.footer')
+    const inttertainmentEl = $('.intertainment')
+    const notificationEl = $('.notification')
+    const mainEl = $('.main')
+    const btn__exit = $('.exit')
+
+    btn__bar.onclick = function () {
+        if(inttertainmentEl.classList.contains('open') && notificationEl.classList.contains('open')) { 
+            inttertainmentEl.classList.remove('open')
+            notificationEl.classList.remove('open')
+            mainEl.classList.remove('zoomIn')
+            footerEl.classList.remove('zoomInFooter')
+        }
+        else{
+            inttertainmentEl.classList.add('open')
+            notificationEl.classList.add('open')
+            mainEl.classList.add('zoomIn')
+            footerEl.classList.add('zoomInFooter')
+        }
+        if(mainEl.classList.contains('zoomOut')){
+            notificationEl.classList.add('open')
+            mainEl.classList.remove('zoomOut')
+            footerEl.classList.remove('zoomOutFooter')
+        }
+    }
+    btn__exit.onclick = function () {
+        notificationEl.classList.remove('open')
+        mainEl.classList.add('zoomOut')
+        footerEl.classList.add('zoomOutFooter')
+    }
+
+
 })();
+
+    
+    
+
 
 
 
